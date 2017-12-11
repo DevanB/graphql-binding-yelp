@@ -10,7 +10,7 @@ export default class GitHubLink extends HttpLink {
     }
     super({
       uri: 'https://api.yelp.com/v3/graphql',
-      headers: { Authorization: `Bearer ${apiKey}` },
+      headers: { Authorization: `bearer ${apiKey}` },
       fetch,
     })
   }

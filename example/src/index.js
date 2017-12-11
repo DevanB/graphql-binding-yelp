@@ -4,7 +4,13 @@ const { importSchema } = require('graphql-import');
 
 const favoriteBusinesses = [
   { term: 'Wawa', city: 'Winter Garden, FL' },
-  { name: '7-Eleven', city: 'Winter Garden, FL' }
+  { term: '7-Eleven', city: 'Winter Garden, FL' }
+];
+
+const businessIds = [
+  { id: "cvs-rogers" },
+  { id: "cvs-pharmacy-bella-vista" },
+  { id: "walgreens-rogers" }
 ];
 
 const apiKey = process.env.YELP_API_KEY || '';
@@ -16,8 +22,12 @@ const resolvers = {
     hello: (parent, { name }) => `Hello ${name || 'World!'}`,
     favoriteBusinesses: (parent, args, context, info) => {
       return Promise.all(favoriteBusinesses.map(args => yelp.delegate('query', 'search', args, context, info)));
+    },
+    otherBusinesses: (parent, args, context, info) => {
+      return Promise.all(businessIds.map(args => yelp.delegate('query', 'business', args, context, info)));
     }
-  }
+  },
+  ...yelp.remoteResolvers(typeDefs)
 };
 
 const server = new GraphQLServer({ resolvers, typeDefs });

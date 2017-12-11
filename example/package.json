@@ -4,12 +4,15 @@
     "deploy": "now --public -e GITHUB_TOKEN && now alias && now rm --yes --safe graphql-binding-github"
   },
   "dependencies": {
-    "graphql-binding-yelp": "^0.0.1",
+    "graphql-binding-yelp": "file:../",
     "graphql-import": "^0.1.5",
     "graphql-yoga": "^0.2.2"
   },
   "now": {
     "alias": "graphql-binding-yelp"
-  }
+  },
+ "engines": {
+   "node": ">=8.6.0"
+ }
 }
 

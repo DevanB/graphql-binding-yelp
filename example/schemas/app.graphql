@@ -1,6 +1,7 @@
 # import Business from "./yelp.graphql"
 
 type Query {
-  hello(name: String): String!
+  hello (name: String): String!
   favoriteBusinesses: [Business!]!
+  otherBusinesses: [Business!]!
 }
