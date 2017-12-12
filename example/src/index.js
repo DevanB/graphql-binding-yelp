@@ -3,8 +3,8 @@ const { GraphQLServer } = require('graphql-yoga');
 const { importSchema } = require('graphql-import');
 
 const favoriteBusinesses = [
-  { term: 'Wawa', city: 'Winter Garden, FL' },
-  { term: '7-Eleven', city: 'Winter Garden, FL' }
+  { term: 'Wawa', location: 'Winter Garden, FL' },
+  { term: '7-Eleven', location: 'Winter Garden, FL' }
 ];
 
 const businessIds = [
