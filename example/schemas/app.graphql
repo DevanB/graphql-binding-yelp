@@ -2,6 +2,6 @@
 
 type Query {
   hello (name: String): String!
-  favoriteBusinesses: [Business!]!
-  otherBusinesses: [Business!]!
+  favoriteBusinesses: Businesses!
+  otherBusinesses: Businesses!
 }
