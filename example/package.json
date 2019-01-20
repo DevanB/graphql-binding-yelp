@@ -11,8 +11,7 @@
   "now": {
     "alias": "graphql-binding-yelp"
   },
- "engines": {
-   "node": ">=8.6.0"
- }
+  "engines": {
+    "node": ">=8.6.0"
+  }
 }
-
